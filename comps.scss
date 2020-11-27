@@ -1,0 +1,398 @@
+/*
+***************************
+*        SYLVAVIO         *
+*                         *
+*         COMPS 1.1       *
+*                         *
+*    Feel free to use     *
+*                         *
+*  And contact me         *
+*  sylvavio@gmail.com     *
+*                         *
+***************************
+*/
+
+// Variables
+
+$c_mobile-breakpoint: 550px; /* this value has to be the same as mobileBreakPoint in comps.js */
+
+
+/* COLORS */
+
+/* text color */
+$c_color-text: rgba(
+  $color: #000000,
+  $alpha: 1,
+);
+/* text bg color */
+$c_color-bg-text: rgba(
+  $color: #ffffff,
+  $alpha: 1,
+);
+/* primary color */
+$c_color-primary: rgba(
+  $color: #fffb00,
+  $alpha: 1,
+);
+
+/* box shadow */
+@mixin c_box {
+  box-shadow: 1px 1px 5px rgba(226, 20, 20, 0.247);
+}
+
+/* over behaviour */
+@mixin c_hover {
+  background-color: $c_color-primary;
+  border-radius: 0 15px 0 15px;
+}
+$c_over-speed: 1.5s;
+
+// CAROUSEL :
+/* Backgrounds ccar_URL */
+$ccar_url1: "./carousel-img/img-test-1.png";
+$ccar_url2: "./carousel-img/img-test-2.png";
+$ccar_url3: "./carousel-img/img-test-3.png";
+/* Dimensions */
+$ccar_height-carousel: 20rem;
+/* Carousel bg mask gradient */
+$ccar_mask-color: #ffffff;
+$ccar_alpha-top: 0.75;
+$ccar_alpha-bottom: 0.5;
+$ccar_orientation: 0deg;
+
+
+
+// NAVBAR
+$cnav_navbar-dropdown-height: 16rem;
+$cnav_icon-rotation: 45deg;
+$cnav_animation_speed: 0.4s;
+
+// END OF VARIABLES TO SET
+
+$ccar_linear-bg-mask: linear-gradient(
+  $ccar_orientation,
+  rgba($ccar_mask-color, $alpha: $ccar_alpha-top),
+  rgba(
+    $color: $ccar_mask-color,
+    $alpha: $ccar_alpha-bottom,
+  )
+);
+
+/*
+****************
+*   CAROUSEL   *
+****************
+*/
+
+#ccar_carousel {
+  margin: 1rem auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow: hidden;
+
+  .ccar_description__slide,
+  .ccar_details__slide,
+  .ccar_title__slide {
+    background-color: $c_color-bg-text;
+    color: $c_color-text;
+  }
+
+  .ccar_description__slide,
+  .ccar_details__slide {
+    display: inline-block;
+    margin: 0.5rem 0;
+    line-height: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .ccar_title__slide {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    padding: 0.2rem;
+  }
+
+  .ccar_slide__container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0;
+  }
+
+  .ccar_side {
+    height: 100%;
+    width: 2rem;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    flex-shrink: 1;
+    margin: auto 0.5rem;
+    font-size: 2.5rem;
+    color: $c_color-text;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #ccar_prev__button {
+    text-align: left;
+  }
+  #ccar_next__button {
+    text-align: right;
+  }
+}
+
+.ccar_slide {
+  height: $ccar_height-carousel;
+  display: flex;
+  flex-direction: column;
+  background-position: center;
+  background-size: cover;
+  margin: 1rem auto;
+  width: 95%;
+  @include c_box();
+}
+
+.ccar_description__container {
+  flex-grow: 1;
+}
+
+.ccar_button__container__slide {
+  align-self: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+
+  button {
+    margin: 0 1rem;
+    @include c_box();
+  }
+}
+
+#ccar_slide1 {
+  display: flex;
+  background-image: $ccar_linear-bg-mask, ccar_url($ccar_url1);
+}
+#ccar_slide2 {
+  display: flex;
+  background-image: $ccar_linear-bg-mask, ccar_url($ccar_url2);
+}
+#ccar_slide3 {
+  display: flex;
+  background-image: $ccar_linear-bg-mask, ccar_url($ccar_url3);
+}
+
+// CAROUSEL ANIMATION
+
+.ccar_slide-in-left {
+  -webkit-animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-left 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+.ccar_slide-in-right {
+  -webkit-animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+    both;
+  animation: slide-in-right 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(1000px);
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+// CAROUSEL MEDIA QUERIES
+
+@media screen and (min-width: $c_mobile-breakpoint) {
+  #ccar_carousel {
+    width: 80%;
+    margin: 2rem auto 2rem auto;
+    padding-bottom: 1rem;
+    @include c_box();
+
+    .ccar_title__slide {
+      @include c_box();
+    }
+  }
+
+  .ccar_slide {
+    border-radius: 0px;
+    box-shadow: none;
+  }
+
+  .ccar_slide1 {
+    background-image: $ccar_linear-bg-mask, ccar_url($ccar_url1);
+  }
+  .ccar_slide2 {
+    background-image: $ccar_linear-bg-mask, ccar_url($ccar_url2);
+  }
+  .ccar_slide3 {
+    background-image: $ccar_linear-bg-mask, ccar_url($ccar_url3);
+  }
+
+  #ccar_slide1,
+  #ccar_slide2,
+  #ccar_slide3 {
+    background-image: none;
+  }
+
+  .ccar_side {
+    display: flex !important;
+  }
+
+  .ccar_slide__container {
+    flex-direction: row;
+    padding: 0;
+  }
+}
+
+/*
+****************
+*     NAVBAR   *
+****************
+*/
+
+.cnav_main {
+  
+}
+
+.cnav_collapsed-content {
+}
+
+.cnav_toggler-content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#cnav_toggler-icon {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: $c_color-text;
+  transition: all $cnav_animation_speed ease-out;
+}
+.cnav_list {
+  max-height: 0px;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  padding-inline-start: 0px;
+  height: 100%;
+  overflow: hidden;
+  
+  
+  a {
+    text-decoration: none;
+  }
+}
+.cnav_slide {
+  transition: max-height $cnav_animation_speed ease-out;
+}
+
+.cnav_list-opened {
+  max-height: $cnav_navbar-dropdown-height;
+}
+
+.cnav_anchor {
+  display: block;
+  position: relative;
+  top: -250px;
+  visibility: hidden;
+}
+
+
+.cnav_rotate {
+  -moz-transform: rotate($cnav_icon-rotation);
+  -ms-transform: rotate($cnav_icon-rotation);
+  -o-transform: rotate($cnav_icon-rotation);
+  -webkit-transform: rotate($cnav_icon-rotation);
+  transform: rotate($cnav_icon-rotation);
+  background-color: $c_color-primary !important;
+  border: 1px solid $c_color-text;
+}
+
+.cnav_item {
+  font-size: 1rem;
+  display: flex;
+  padding: 0.8rem;
+  height: 100%;
+  border: 1px solid rgba(0, 0, 0, 0);
+  align-items: center;
+  text-align: center;
+  transition: all $c_over-speed;
+}
+
+.cnav_item:hover {
+  @include c_hover;
+}
+
+
+// NAVBAR MEDIA QUERIES
+
+@media screen and (min-width: $c_mobile-breakpoint) {
+
+.cnav_navbar__toggler-icon {
+  display: none;
+}
+
+.cnav_navbar__list {
+  max-height: 100%;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+}
