@@ -33,9 +33,9 @@ prefix : "c_"
 | scss | @mixin c_box | predefined shadow for buttons and containers | see file |
 | scss | @mixin c_hover | predefined over behaviour | see file |
 | scss | $c_hover-speed | speed of over in and out transition | 1.5s |
-|  |  |  |  |
 | js | mobileBreakPoint | value in pixel under which carousel switches to mobile mode| 550 |
-|  |  |  |  |
+
+
 **'mobileBreakPoint' and '$mobile-breakpoint' have to contain the same value.**
 
 
@@ -47,13 +47,14 @@ prefix : "c_"
 #### Carousel variables
 prefix : "ccar_"
 
-| scss | $ccar_urlx | url of the background img of the slide number x | "./carousel-img/img-test-1.png" |
+| document | name | purpose | default value |
+| ------ | ------ | ------ | ------ |
+| scss | $ccar_urlx | url of the background img of the slide number x |  |
 | scss | $ccar_height-carousel | height of the carousel | 20rem |
 | scss | $mask-color | Color of the linear-gradient that filters the background image of the slide | #FFFFFF |
 | scss | $ccar_alpha-top | start opacity of the linear-gradient | 0.75 |
 | scss | $ccar_alpha-bottm | end opacity of the linear-gradient | 0.5 |
 | scss | $ccar_orientation | angle of the linear-gradient | 0deg |
-| ------ | ------ | ------ | ------ |
 | js | numberOfSlides | number of slides in the carousel | 3 |
 
 #### Carousel classes and ids :
@@ -77,9 +78,12 @@ It is RESPONSIVE :
 Simple collapsable navbar.
 #### Navbar variables
 prefix : "cnav_"
-| scss | $cnav_navbar-dropdown-height | height of collapsed navbar when openend |
+| document | name | purpose | default value |
+| ------ | ------ | ------ | ------ |
+| scss | $cnav_navbar-dropdown-height | height of collapsed navbar when openend | 16rem |
 | scss | $cnav_icon-rotation | Rotation angle of the collapsed menu icon | 45deg |
 | scss | $cnav_animation_speed: | Speed of the dropdown menu | 0.4s |
+
 
 #### NAVBAR classes and ids :
 | class / id | Role |
@@ -98,7 +102,7 @@ prefix : "cnav_"
 # TODOS :
 
 - Programmatic link between CSS and JS,
-- More personnamization,
+- More personnalization,
 - More components
 - ...
 
