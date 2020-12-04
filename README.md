@@ -1,10 +1,10 @@
 # Comps
+**Comps is a set of frontend pre-build components.**
 
 current version = 1.2
 
-27/11/2020
+04/12/2020
 
-Comps is a set of frontend pre-build components I am building to save me some time programming.
 
 | Component | Integrated in version |
 | ------ | ------ |
