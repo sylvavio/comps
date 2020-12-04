@@ -1,6 +1,6 @@
 # Comps
 
-current version = 1.1
+current version = 1.2
 
 27/11/2020
 
@@ -26,7 +26,6 @@ prefix : "c_"
 
 | File | Name | Effect | Default |
 | ------ | ------ | ------ | ------ |
-| scss | $c_mobile-breakpoint | View Width under which carousel switches to mobile mode | 550px
 | scss | $c_color-text | Color of the prev and next buttons | #000000 |
 | scss | $c_color-bg-text | Background color of the inner slide texts | #000000 |
 | scss | $c_color-primary | Color of the inner slide texts | #fffb0 |
@@ -44,6 +43,28 @@ prefix : "c_"
 - The carousel is made of slides. 
 - Example file provides 3 slides but you can add as many as you want.
 - All classes and ids have been prefixed with a "ccar_" standing for "Component Carousel" to avoid conflict.
+#### HTML CODE : 
+
+```    
+<div id="ccar_carousel" class="ccar_slide1">
+  <div id="ccar_prev__button" class="ccar_side">&lt;</div>
+  <div class="ccar_slide__container">
+    <div id="ccar_slide1" class="ccar_slide ccar__active">
+      <div class="ccar_header__slide">
+        <p class="ccar_title__slide">#1 : slide 1</p>
+      </div>
+      <div class="ccar_description__container">
+        <span class="ccar_description__slide">description slide 1</span>
+        <span class="ccar_details__slide">details slide 1</span>
+      </div>
+      <div class="ccar_button__container__slide">
+        <a href="#"><button>Btn 1 slide 1</button> </a>
+        <a href="#"><button>Btn 2 slide 1</button> </a>
+      </div>
+    </div>
+  <div id="ccar_next__button" class="ccar_side">&gt;</div>
+</div>
+```
 #### Carousel variables
 prefix : "ccar_"
 
@@ -73,9 +94,28 @@ prefix : "ccar_"
 It is RESPONSIVE : 
 - In mobile mode slides explode into individual cards.
 
+
 ### NAVBAR How To :
 
 Simple collapsable navbar.
+
+#### HTML CODE :
+
+```
+<nav class="cnav_main" role="navigation">
+  <div class="cnav_collapsed-content">
+    <div class="cnav_toggler-content">
+      <div id="cnav_toggler-icon" class=""></div>
+    </div>
+    <ul class="cnav_list">
+      <a href="#"><li class="cnav_item">link1</li></a>
+      <a href="#"><li class="cnav_item">link2</li></a>
+      <a href="#"><li class="cnav_item">link3</li></a>
+      <a href="#"><li class="cnav_item">link4</li></a>
+    </ul>
+  </div>
+</nav>
+```
 #### Navbar variables
 prefix : "cnav_"
 | document | name | purpose | default value |
