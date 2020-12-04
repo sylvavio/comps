@@ -15,7 +15,6 @@
 // Variables
 
 const ccar_numberOfslides = 3; /* ENTER HERE THE NUMBER OF SLIDES OF THE CAROUSEL */
-const c_mobileBreakPoint = 550;   /* This value has to be the same as CSS $mobile-breakpoint variable*/
 
 
 //  CODE
@@ -29,23 +28,6 @@ const c_mobileBreakPoint = 550;   /* This value has to be the same as CSS $mobil
 let slideToDisplay = 1;
 $(document).ready(() => {
   // CAROUSEL
-  // Resets CSS display of slides depending on responsive
-  // Checks screen width onload :
-  window.onload = () => {
-    windowWidthCheck(c_mobileBreakPoint);
-  };
-  // Checks screen width on resize :
-  $(window).resize(() => {
-    windowWidthCheck(c_mobileBreakPoint);
-  });
-
-  function windowWidthCheck(c_mobileBreakPoint) {
-    if ($(window).width() > c_mobileBreakPoint) {
-      displayDiv(slideToDisplay);
-    } else {
-      $(".ccar_slide__container").children().css("display", "flex");
-    }
-  }
 
   // Slide behaviour
   // prev click
@@ -88,8 +70,8 @@ $(document).ready(() => {
   // Div
   function displayDiv(number) {
     let slideId = `#${createClassId(number)}`;
-    $(".ccar_slide").css("display", "none");
-    $(slideId).css("display", "flex");
+    $(".ccar_slide").removeClass("ccar__active");
+    $(slideId).addClass("ccar__active");
   }
 
   function createClassId(number) {

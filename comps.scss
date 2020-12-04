@@ -84,6 +84,10 @@ $ccar_linear-bg-mask: linear-gradient(
 ****************
 */
 
+.ccar__active {
+  display: flex !important;
+}
+
 #ccar_carousel {
   margin: 1rem auto;
   display: flex;
@@ -171,15 +175,12 @@ $ccar_linear-bg-mask: linear-gradient(
 }
 
 #ccar_slide1 {
-  display: flex;
   background-image: $ccar_linear-bg-mask, ccar_url($ccar_url1);
 }
 #ccar_slide2 {
-  display: flex;
   background-image: $ccar_linear-bg-mask, ccar_url($ccar_url2);
 }
 #ccar_slide3 {
-  display: flex;
   background-image: $ccar_linear-bg-mask, ccar_url($ccar_url3);
 }
 
@@ -264,6 +265,7 @@ $ccar_linear-bg-mask: linear-gradient(
   .ccar_slide {
     border-radius: 0px;
     box-shadow: none;
+    display: none;
   }
 
   .ccar_slide1 {

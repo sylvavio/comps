@@ -26,6 +26,10 @@
 *   CAROUSEL   *
 ****************
 */
+.ccar__active {
+  display: flex !important;
+}
+
 #ccar_carousel {
   margin: 1rem auto;
   display: flex;
@@ -114,17 +118,14 @@
 }
 
 #ccar_slide1 {
-  display: flex;
   background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5)), ccar_url("./carousel-img/img-test-1.png");
 }
 
 #ccar_slide2 {
-  display: flex;
   background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5)), ccar_url("./carousel-img/img-test-2.png");
 }
 
 #ccar_slide3 {
-  display: flex;
   background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5)), ccar_url("./carousel-img/img-test-3.png");
 }
 
@@ -171,6 +172,7 @@
   .ccar_slide {
     border-radius: 0px;
     box-shadow: none;
+    display: none;
   }
   .ccar_slide1 {
     background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.5)), ccar_url("./carousel-img/img-test-1.png");
