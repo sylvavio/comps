@@ -1,6 +1,9 @@
 # Comps
 **Comps is a set of frontend pre-build components.**
 
+Right now it is composed of a **carousel** and a **navbar**.
+It's a work in progress.
+
 current version = 1.2
 
 04/12/2020
@@ -139,11 +142,11 @@ prefix : "cnav_"
 |```.cnav_rotate```| JS controled : rotation of toggler icon |
 
 
-# TODOS :
+## TODOS :
 
 - Programmatic link between CSS and JS,
 - More personnalization,
 - More components
 - ...
 
-# ENJOY !
+Feel free to contact me : sylvavio@gmail.com
